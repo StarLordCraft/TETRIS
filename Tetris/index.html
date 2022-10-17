@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <link rel="icon" href="src_img/Tetris.ico.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="src_img/Tetris.ico" type="image/x-icon"/>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TETRIS</title>
+    <style type="text/css">
+        .title1{
+            padding-top:100px;
+            display:inline;
+            color: #F99898;
+            font-size:150px;
+        }  
+        .title2{
+            padding-top:100px;
+            display:inline;
+            color: #F098F9;
+            font-size:150px;
+        }
+        .title3{
+            padding-top:100px;
+            display:inline;
+            color: #B498F9;
+            font-size:150px;
+        }
+        .title4{
+            padding-top:100px;
+            display:inline;
+            color: #98F9F2;
+            font-size:150px;
+        }
+        .title5{
+            padding-top:100px;
+            display:inline;
+            color: #98F9A1;
+            font-size:150px;
+        }
+        .title6{
+            padding-top:100px;
+            display:inline;
+            color: #F3F998;
+            font-size:150px;
+        }
+        body{
+            background-color: #333333;
+            color: #fff;
+        }
+        #score #speed{
+            display:inline-block;
+        }
+        div{
+            font-size:25px;
+            font-weight:bold;
+            font-family:monospace;
+            text-align:center;
+        }
+        .como_jogar{
+            background-color: #FFFF8F;
+            color: #000;
+            width: 175px;
+            height: 50px;
+            border: 3px #fff;
+            font-size:25px;
+            font-weight:bold;
+            font-family:monospace;
+        }
+        .como_jogar:hover{
+            background-color: #FFFF8F;
+            color: #000;
+            width: 200px;
+            height: 60px;
+            border: 3px;
+            font-size:30px;
+            border-radius:15px;
+            cursor: pointer;
+        }
+        .sobre{
+            background-color: #D70040;
+            color: #000;
+            width: 175px;
+            height: 50px;
+            border: 3px #fff;
+            font-size:25px;
+            font-weight:bold;
+            font-family:monospace;
+        }
+        .sobre:hover{
+            background-color: #D70040;
+            color: #000;
+            width: 200px;
+            height: 50px;
+            border: 3px;
+            font-size:30px;
+            border-radius:15px;
+            cursor: pointer;
+        }
+        .jogar{
+            display: block;
+            background-color: #98FB98;
+            color: #000;
+            width: 200px;
+            height: 50px;
+            border: 3px #fff;
+            font-size:40px;
+            font-weight:bold;
+            font-family:monospace;
+            margin: 0 auto;
+        }
+        .jogar:hover{
+            background-color: #98FB98;
+            color: #000;
+            width: 225px;
+            height: 60px;
+            border: 3px;
+            font-size:50px;
+            border-radius:15px;
+            cursor: pointer;
+        }
+        .about{
+            display:none;
+            color: #000;
+            font-size:25px;
+            font-weight:bold;
+            font-family:monospace;
+        }
+        aside{
+                display:block;
+                margin: 0 auto;
+                border:1px solid #333;
+                padding:30px;
+                background-color: #fff;
+                color:#000;
+                width: 600px;
+                height: 600px;
+            }
+        .asidechange{
+            height: 820px;
+            background-color: #000;
+        }
+        .main_menu{
+            display: block;
+            background-color: #98FB98;
+            color: #000;
+            width: 400px;
+            height: 60px;
+            border: 3px #fff;
+            font-size:40px;
+            font-weight:bold;
+            font-family:monospace;
+            margin: 0 auto;
+        }
+        .main_menu:hover{
+            background-color: #98FB98;
+            color: #000;
+            width: 500px;
+            height: 60px;
+            border: 3px;
+            font-size:50px;
+            border-radius:15px;
+            cursor: pointer;
+        }
+        .htp{display:none;}
+
+        .game{
+            display:none;
+        }
+        .property {
+             width: 300px;
+             margin: auto;
+             float:left;
+        }
+        .slideshow {
+            background: #262626;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            position: relative;
+            width:600px;
+            height:400px;          
+        }
+        .slideshow-item {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+             opacity: 0;
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+        .slideshow-item img {
+            width: 100%;
+            display: block;
+            margin: auto;
+        }
+        .arrow {
+            position: absolute;
+            top: 0;
+            display: block;
+            width: 50px;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%206%2016%22%20width%3D%226%22%20height%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m5%201-4%207%204%207%22%20fill%3D%22none%22%20stroke-width%3D%22.8%22%20opacity%3D%22.3%22%20stroke%3D%22%23000%22%20stroke-linecap%3D%22square%22%2F%3E%3Cpath%20d%3D%22m5%201-4%207%204%207%22%20fill%3D%22none%22%20stroke-width%3D%22.5%22%20stroke%3D%22%23fff%22%20stroke-linecap%3D%22square%22%2F%3E%3C%2Fsvg%3E%0A") no-repeat center/30px;
+            }
+        .arrow-next {
+            right: 0;
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+        .progress {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #ccc;
+            font-family: sans-serif;
+        }
+        [id^="target"]:target ~ .play {
+            -webkit-transition: all 750ms ease;
+            transition: all 750ms ease;
+             opacity: 1;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+ 
+        [id^="target"] {
+             display: none;
+        }
+        .item-1 {
+             z-index: 2;
+            opacity: 1;
+        }
+ 
+        *:target ~ .item-1 {
+             opacity: 0;
+        }
+ 
+        #target-1:target ~ .item-1 {
+             opacity: 1;
+        }
+ 
+        #target-2:target ~ .item-2,
+        #target-3:target ~ .item-3,
+        #target-4:target ~ .item-4 {
+            z-index: 3;
+             opacity: 1;
+            }
+        @-webkit-keyframes slideshow {
+            0%, 30%, 100% {
+                opacity: 0;
+            }
+            5%, 25% {
+                opacity: 1;
+            }
+        }
+ 
+        @keyframes slideshow {
+            0%, 30%, 100% {
+                opacity: 0;
+             }
+            5%, 25% {
+                 opacity: 1;
+            }
+        }
+        item-1 {
+            -webkit-animation: slideshow 16s ease 0s infinite;
+            animation: slideshow 16s ease 0s infinite;
+        }
+        .item-2 {
+                -webkit-animation: slideshow 16s ease 4s infinite;
+                animation: slideshow 16s ease 4s infinite;
+        }
+        .item-3 {
+                -webkit-animation: slideshow 16s ease 8s infinite;
+                 animation: slideshow 16s ease 8s infinite;
+        }
+        .item-4 {
+                -webkit-animation: slideshow 16s ease 12s infinite;
+                animation: slideshow 16s ease 12s infinite;
+        }
+        #target-1:target ~ .item-1 {
+                 opacity: 1 !important;
+                -webkit-animation: none;
+                 animation: none;
+        }
+        #target-1:target ~ .item-2, #target-1:target ~ .item-3, #target-1:target ~ .item-4 {
+                opacity: 0;
+                -webkit-animation: none;
+                 animation: none;
+        }
+ 
+        #target-2:target ~ .item-2 {
+            opacity: 1 !important;
+            -webkit-animation: none;
+             animation: none;
+        }
+        #target-2:target ~ .item-1, #target-2:target ~ .item-3, #target-2:target ~ .item-4 {
+            opacity: 0;
+            -webkit-animation: none;
+            animation: none;
+        }
+ 
+        #target-3:target ~ .item-3 {
+            opacity: 1 !important;
+            -webkit-animation: none;
+            animation: none;
+        }
+        #target-3:target ~ .item-1, #target-3:target ~ .item-2, #target-3:target ~ .item-4 {
+            opacity: 0;
+            -webkit-animation: none;
+             animation: none;
+        }
+ 
+        #target-4:target ~ .item-4 {
+            opacity: 1 !important;
+            -webkit-animation: none;
+            animation: none;
+        } 
+        #target-4:target ~ .item-1, #target-4:target ~ .item-2, #target-4:target ~ .item-3 {
+            opacity: 0;
+            -webkit-animation: none;
+            animation: none;
+        }
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+             padding: 10px 0;
+            height: 150px;
+        }
+        canvas{
+            display: inline;
+            margin: 0 auto;
+        }
+        .menu{display:block}
+
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+            }
+            .white_content {
+                display: none;
+                position: absolute;
+                top: 25%;
+                left: 25%;
+                width: 50%;
+                height: 50%;
+                padding: 16px;
+                border: 16px solid orange;
+                background-color: white;
+                z-index: 1002;
+                overflow: auto;
+            }
+            .pause{
+                height: 600px;
+                width: 300px;
+                display: block;
+                margin: 0 auto;
+            }
+            .verde{
+                font-weight: bold;
+                color: #98FB98;
+            }
+            .black{
+                background-color: #000;
+            }
+            .pause
+            {
+                margin-top: 125px;
+                margin-left: 25px;
+                background-color: #000;
+                position: absolute;
+                width: 250px;
+                height: 300px;
+                display: none;
+                border-color: gold;
+                border-style: solid;
+            }
+            .gameover{
+                margin-top: 125px;
+                margin-left: 20px;
+                background-color: #000;
+                position: absolute;
+                width: 350px;
+                height: 250px;
+                display: none;
+                border-color: red;
+                border-style: solid;
+            }
+            .textgameover{
+                color: red;
+                font-weight: bold;
+                font-family: monospace;
+            }
+            .background{
+                display:inline;
+                float:left;
+                width:300px;
+                margin-left: 75px;
+            }
+            .background1{
+                display:inline;
+                float:right;
+                width:300px;
+                margin-right:75px;
+            }
+            .background_canvas{
+                display:inline;
+            }
+            .img_title{
+                display:inline;
+            }
+            .button_jogar{
+                display:inline;
+                width: 50px;
+                height: 50px;
+                background-color: cyan;
+                border: 3px #0CA890;
+                border-style: solid;
+                font-size: 30px;
+                font-weight: bold;
+                font-family: monospace;
+                color: #0CA890;
+                position:absolute;
+
+            }
+            .jogar_button:hover .button_jogar{
+                width: 60px;
+                height: 60px;
+                cursor: pointer;
+                display: inline;
+            }
+            .button_tutorial{
+                display:inline;
+                width: 50px;
+                height: 50px;
+                background-color: #98FB98;
+                border: 3px #09A210;
+                border-style: solid;
+                margin: -6.5px;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: monospace;
+                color: #09A210;
+                position:absolute;
+            }
+            .tutorial_button:hover .button_tutorial{
+                width: 60px;
+                height: 60px;
+                cursor: pointer;
+                display: inline;
+            }
+            .button_sobre{
+                display:inline;
+                width: 50px;
+                height: 50px;
+                background-color:#F098F9;
+                border: 3px #EA0477;
+                border-style: solid;
+                margin: -6.5px;
+                font-size: 21px;
+                font-weight: bold;
+                font-family: monospace;
+                color: #EA0477;
+                position:absolute;
+            }
+            .sobre_button:hover .button_sobre{
+                width: 60px;
+                height: 60px;
+                cursor: pointer;
+                display: inline;
+            }
+
+    </style>
+</head>
+<body>
+    <audio src="src_sounds/buttonclick.mp3" id="click_sound"></audio>
+    <audio src="src_sounds/ingamesound.mp3" id="ingame_sound" loop></audio>
+    <audio src="src_sounds/crashline.mp3" id="crash_line_sound"></audio>
+    
+    <div class = "menu" id = "d1"><!--menu principal-->
+        <audio src="src_sounds/menusound.mp3" id="menu_sound" autoplay loop></audio>
+        <aside class="background" style="background-color:#333333">
+            <canvas  width="400"height="600" class="background_canvas" id="background_canvas"></canvas>
+        </aside>
+
+        <aside class="background1" style="background-color:#333333">
+            <canvas  width="400"height="600" class="background_canvas" id="background1_canvas"></canvas>
+        </aside>
+        <div style=" margin-top:100px; margin-bottom:300px">
+            <img src="src_img/name/T1.jpg" class="img_title" width="100" height="117"/><img src="src_img/name/E.jpg" class="img_title" width="97"/><img src="src_img/name/T2.jpg" class="img_title" style="margin-right:5px"/><img src="src_img/name/R.jpg" width="80" class="img_title" style="margin-right:5px"/><img src="src_img/name/I.jpg" class="img_title" height="127"/><img src="src_img/name/S.jpg" class="img_title" width="88"/>
+        </div>
+
+        <div style="display:inline;">
+            <div class="sobre_button" id="sobre"><button class="button_sobre" style="width:100px; top: 64.8%; left: 42.6%">SOBRE</button> <button  class="button_sobre" style="left:39%" > </button> <button class="button_sobre" style="left:42.6%"></button> </div>
+            
+            <div class="tutorial_button" id="como_jogar"> <button class="button_tutorial" id="como_jogar" style="width:100px; top: 64.8%; left:53.1%;">TUTORIAL</button> <button class="button_tutorial" id="como_jogar" style="left:60%"></button> <button class="button_tutorial" style="left:56.4%"></button></div>   
+
+            <div class="jogar_button" id="jogar"><button class="button_jogar" style="width:150px; top:70.4%; left:45.7%;">JOGAR</button><button class="button_jogar" style="width:52px; top:63.8%; left: 49%;" ></button></div>
+
+        </div>
+    </div>
+
+
+    <div class="about" id="d2"><!--falando sobre mim-->
+        <aside class="black">
+            <h1 class="title1">S</h1><h1 class="title2">O</h1><h1 class="title3">B</h1><h1 class="title4">R</h1><h1 class="title5">E</h1>
+        
+            <p class="verde">OLÁ PLAYER, meu nome é Rafael Alves criador desse jogo (a ideia original não foi minha,foi de um russo). Fiz esse jogo para fins educativos (estou aprendendo JavaScript,HTML,CSS)
+            como pôde perceber não sou o melhor webdesigner do mundo... Mas espero que você se divirta muito com o jogo.
+            </p>
+            <p class="verde"><a target="blank" href="https:/wa.me/5538992588645?text=Olá%20tudo%20bem?%20vim%20pelo%20seu%20Tetris!%20">Contato: +55 (38) 99258-8645</a></p>
+            <P class="verde">Email: rafa.viana.moc@gmail.com</P>
+            <p class="verde"><a target="blank" href="https://www.instagram.com/rafaellves/">instagram</a></p>
+        </aside>
+        <button class="main_menu" id="btn_about_main_menu">Menu Principal</button>
+    </div>
+
+
+    <div class="htp" id="d3"><!--tutorial-->
+        <h1 class="title1">T</h1><h1 class="title2">U</h1><h1 class="title3">T</h1><h1 class="title4">O</h1><h1 class="title6">R</h1><h1 class="title1">I</h1><h1 class="title2">A</h1><h1 class="title3">L</h1>
+        <aside class="asidechange">
+            <div class="property">
+                <section class="slideshow">
+                   <span id="target-1"></span>
+                   <span id="target-2"></span>
+                   <span id="target-3"></span>
+                   <span id="target-4"></span>
+                   <div class="slideshow-item item-1">
+                      <div class="progress">1 of 4</div>
+                      <img id= "img1"src="src_img/MarcandoPontos.jpg" alt="Preencha as linhas para pontuar" width="200" height="600"/>
+                      <div class="verde" id="caption1" style="font-size:40px;"></div>
+                      <a href="#target-4" class="arrow arrow-prev"></a>
+                      <a href="#target-2" class="arrow arrow-next"></a>
+                   </div>
+                   <div class="slideshow-item item-2">
+                      <div class="progress">2 of 4</div>
+                      <img id= "img2" src="src_img/Derrota.jpg" alt="CUIDADO! Ao levar uma coluna ate o topo da tela você perde." width="300" height="650"/>
+                      <div class="verde" id="caption2" style="font-size:40px;"></div>
+                      <a href="#target-1" class="arrow arrow-prev"></a>
+                      <a href="#target-3" class="arrow arrow-next"></a>
+                   </div>
+                   <div class="slideshow-item item-3">
+                      <div class="progress">3 of 4</div>
+                      <img id= "img3" src="src_img/InkedSetinhas.jpg" alt="1: Altera a posição do bloco <br>2: mexe para esquerda <br>3: faz cair mais rápido <br>4: Movimenta para direita" width="300" height="500" />
+                      <div class="verde" id="caption3" style="font-size:40px;"></div>
+                      <a href="#target-2" class="arrow arrow-prev"></a>
+                      <a href="#target-4" class="arrow arrow-next"></a>
+                   </div>
+                   <div class="slideshow-item item-4">
+                      <div class="progress">4 of 4</div>
+                      <img id= "img4" src="src_img/Pause.jpeg" alt="Pressione a tecla 'space' para pausar o jogo!" width="300" height="700" />
+                      <div class="verde" id="caption4" style="font-size:40px;"></div>
+                      <a href="#target-3" class="arrow arrow-prev"></a>
+                      <a href="#target-1" class="arrow arrow-next"></a>
+                   </div>
+                </section>
+             </div>
+
+        </aside>
+        <button class="main_menu" id="btn_htp_main_menu">Menu Principal</button>
+    </div>
+
+    <div  class="game" id="d4"><!--jogo em si-->
+
+        <div class="pause" id="d5">
+            <h1 class="title1" style="font-size:75px; ">M</h1><h1 class="title2" style="font-size:75px;">E</h1><h1 class="title3" style="font-size:75px;">N</h1><h1 class="title4" style="font-size:75px;">U</h1>
+            <br><br>
+            <button class="jogar"id="continue" style="display:inline; width:175px; font-size:25px;">CONTINUAR</button>
+            <br>
+            <button class="como_jogar"id="restart">REINICIAR</button>
+            <br>
+            <button class="sobre"id="game_to_menu">VOLTAR</button>
+
+        </div>
+
+        <div class="gameover" id="d6">
+            <audio src="src_sounds/gameover.mp3" id="game_oversound"></audio>
+            <h1 class="textgameover">FIM DE JOGO</h1>
+            <button class="jogar" style="display:block; width:175px; font-size:20px;" id="jogar_novamente">JOGAR NOVAMENTE</button>
+            <button class="sobre" id="voltar">VOLTAR</button>
+
+        </div>
+
+        <canvas id="tetris" width="450" height="600"></canvas>            
+            <div>
+                <p>
+                    Pontuação: <span id="score"> </span>
+                </p>
+                <p>
+                    Velocidade: <span id="speed"></span>
+                </p>
+            </div>
+
+    </div>
+
+    <script src="Js_code/piece.js"></script>
+    <script src="Js_code/skeletons.js"></script>
+    <script src="Js_code/functions.js"></script>
+    <script src="Js_code/game.js"></script>
+    <script src="Js_code/background.js"></script>
+    
+    <script>//basicamente as divs e os funcionamentos dos botões
+        const sound_menu = document.getElementById("menu_sound");
+        const sound_click_button = document.getElementById("click_sound");
+        const sound_ingame = document.getElementById("ingame_sound");
+        const sound_crash_line = document.getElementById("crash_line_sound");
+
+        const menu_div = document.getElementById("d1");
+        const btn_about_main_menu = document.getElementById("btn_about_main_menu");
+        const btn_htp_main_menu = document.getElementById("btn_htp_main_menu");
+
+        const about_div = document.getElementById("d2");
+        const btn_about = document.getElementById("sobre");
+        
+        const how_to_play_div = document.getElementById("d3");
+        const btn_htp = document.getElementById("como_jogar");
+
+        const game_div = document.getElementById("d4");
+        const btn_game = document.getElementById("jogar");
+
+        const pause_div = document.getElementById("d5");
+        const btn_restart = document.getElementById("restart");
+        const btn_back_to_menu = document.getElementById("game_to_menu");
+        const btn_continue = document.getElementById("continue");
+
+        const game_over_div = document.getElementById("d6");
+        const btn_jogar_novamente = document.getElementById("jogar_novamente");
+        const btn_voltar = document.getElementById("voltar")
+
+        btn_about.onclick = function () {
+            sound_click_button.play();
+            menu_div.style.display = "none";
+            about_div.style.display = "block";
+        }
+
+        btn_htp.onclick = function () {
+            menu_div.style.display = "none";
+            how_to_play_div.style.display = "block";
+            sound_click_button.play();
+        }
+
+        btn_game.onclick = function () {
+            sound_click_button.play();
+            menu_div.style.display = "none";
+            game_div.style.display = "block";
+            sound_menu.pause();
+            sound_ingame.play();
+            if(!playagain){game();}
+            else{
+                resetGame();
+                piece = newpiece(ntxpiece);
+                drop();
+            }
+        }
+
+        btn_about_main_menu.onclick = function () {
+        sound_click_button.play();
+        about_div.style.display = "none";
+        menu_div.style.display = "block";
+        }
+        btn_htp_main_menu.onclick = function () {
+        sound_click_button.play();
+        how_to_play_div.style.display = "none";
+        menu_div.style.display = "block";
+        }
+
+        btn_restart.onclick = function() {
+            sound_click_button.play();
+            playagain++;
+            sound_click_button.play();
+            pause_div.style.display = "none";
+            resetGame();
+            piece = newpiece(ntxpiece);
+            drop();
+        }
+        btn_back_to_menu.onclick = function () {
+            sound_click_button.play();
+            pause_div.style.display = "none";
+            game_div.style.display = "none";
+            menu_div.style.display = "block";
+            sound_ingame.pause();
+            sound_menu.play();
+            playagain++;
+            piece.endgame = true;
+        }
+        btn_continue.onclick = function () {
+            sound_click_button.play();
+            pause_div.style.display = "none";
+            anima = true;
+            drop();
+        }
+        btn_jogar_novamente.onclick = function (){
+            sound_click_button.play();
+            game_over_div.style.display = "none";
+            resetGame();
+            piece = newpiece(ntxpiece);
+            drop();
+        }
+        btn_voltar.onclick = function (){
+            sound_click_button.play();
+            game_over_div.style.display = "none";
+            game_div.style.display = "none";
+            menu_div.style.display = "block";
+            sound_ingame.pause();
+            sound_menu.play();
+            retorno = true;
+        }
+
+    </script>
+
+<script>//legendas das imagens do tutorial 
+    var captionText1 = document.getElementById("caption1");
+    var img1 = document.getElementById("img1");
+    captionText1.innerHTML = img1.alt;
+
+    var captionText2 = document.getElementById("caption2");
+    var img2 = document.getElementById("img2");
+    captionText2.innerHTML = img2.alt;
+
+    var captionText3 = document.getElementById("caption3");
+    var img3 = document.getElementById("img3");
+    captionText3.innerHTML = img3.alt;
+
+    var captionText4 = document.getElementById("caption4");
+    var img4 = document.getElementById("img4");
+    captionText4.innerHTML = img4.alt;
+</script>
+
+
+
+</body>
+</html>
