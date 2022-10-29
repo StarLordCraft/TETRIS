@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <link rel="icon" href="src_img/Tetris.ico.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="src_img/Tetris.ico" type="image/x-icon"/>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TETRIS</title>
+
+    <link href ="Css_style/content.css" rel="stylesheet">
+    <link href="Css_style/divs.css" rel="stylesheet">
+    <link href="Css_style/buttons.css" rel="stylesheet">
+    <link href="Css_style/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+    <audio src="src_sounds/buttonclick.mp3" id="click_sound"></audio>
+    <audio src="src_sounds/ingamesound.mp3" id="ingame_sound" loop></audio>
+    <audio src="src_sounds/crashline.mp3" id="crash_line_sound"></audio>
+
+    <div class = "menu" id = "d1"><!--menu principal-->
+        <audio src="src_sounds/menusound.mp3" id="menu_sound" loop></audio>
+
+        <aside class="background">
+            <canvas width height id="background_canvas"></canvas>
+        </aside>
+
+        <img src="src_img/Name/T1.png" class="img_title1"/><img src="src_img/Name/E.png" class="img_title2"/><img src="src_img/Name/T2.png" class="img_title3"/><img src="src_img/Name/R.png" class="img_title4"/><img src="src_img/Name/I.png" class="img_title5"/><img src="src_img/Name/S.png" class="img_title6" width="7%" height="26%"/>
+
+        <div class="sobre_button" id="sobre"><button class="button_sobre1">SOBRE</button> <button  class="button_sobre2"> </button> <button class="button_sobre3"></button> </div>
+            
+        <div class="tutorial_button" id="como_jogar"> <button class="button_tutorial1" id="como_jogar">TUTORIAL</button> <button class="button_tutorial2" id="como_jogar"></button> <button class="button_tutorial3"></button></div>   
+
+        <div class="jogar_button" id="jogar"><button class="button_jogar1">JOGAR</button><button class="button_jogar2" ></button></div>
+
+        <aside class="background1">
+            <canvas width height id="background1_canvas"></canvas>
+        </aside>
+
+    </div>
+
+
+    <div class="about" id="d2"><!--falando sobre mim-->
+            <h1 class="title1">S</h1><h1 class="title2">O</h1><h1 class="title3">B</h1><h1 class="title4">R</h1><h1 class="title5">E</h1>
+        
+            <p>OLÁ PLAYER, meu nome é Rafael Alves criador desse jogo (a ideia original não foi minha,foi de um russo). Fiz esse jogo 
+            para fins educativos (estou aprendendo JavaScript,HTML,CSS) como pôde perceber não sou o melhor webdesigner do mundo... Mas espero que você se divirta muito com o jogo.
+            <p><a target="blank" href="https://api.whatsapp.com/send/?phone=5538992588645&text=Ol%C3%A1+tudo+bem%3F+vim+pelo+seu+Tetris%21+&type=phone_number&app_absent=0">Contato: +55 (38) 99258-8645</a></p>
+            <P>Email: rafa.viana.moc@gmail.com</P>
+            <p><a target="blank" href="https://www.instagram.com/rafaellves/">instagram</a></p>
+            <br/>
+            <button class="main_menu" id="btn_about_main_menu">Menu Principal</button>
+    </div>
+
+
+    <div class="htp" id="d3"><!--tutorial-->
+        <aside class="asidechange">
+            <h1 class="title1">T</h1><h1 class="title2">U</h1><h1 class="title3">T</h1><h1 class="title4">O</h1><h1 class="title6">R</h1><h1 class="title1">I</h1><h1 class="title2">A</h1><h1 class="title3">L</h1>
+        <div class="property">
+                <section class="slideshow">
+                   <span id="target-1"></span>
+                   <span id="target-2"></span>
+                   <span id="target-3"></span>
+                   <span id="target-4"></span>
+                   <div class="slideshow-item item-1">
+                      <div class="progress">1 of 4</div>
+                      <img id= "img1"src="src_img/MarcandoPontos.png" alt="Preencha as linhas para pontuar" width="100%" height="80%"/>
+                      <div class="verde" id="caption1" style="justify-content: center; align-items: center;"></div>
+                      <a href="#target-4" class="arrow arrow-prev"></a>
+                      <a href="#target-2" class="arrow arrow-next"></a>
+                   </div>
+                   <div class="slideshow-item item-2">
+                      <div class="progress">2 of 4</div>
+                      <img id= "img2" src="src_img/Derrota.png" alt="CUIDADO! Ao levar uma coluna ate o topo da tela você perde." width="100%" height="80%"/>
+                      <div class="verde" id="caption2" style="justify-content: center; align-items: center;"></div>
+                      <a href="#target-1" class="arrow arrow-prev"></a>
+                      <a href="#target-3" class="arrow arrow-next"></a>
+                   </div>
+                   <div class="slideshow-item item-3">
+                      <div class="progress">3 of 4</div>
+                      <img id= "img3" src="src_img/InkedSetinhas.png" alt="1: Altera a posição do bloco <br>2: mexe para esquerda <br>3: faz cair mais rápido <br>4: Movimenta para direita" width="100%" height="80%" />
+                      <div class="verde" id="caption3" style="justify-content: center; align-items: center;"></div>
+                      <a href="#target-2" class="arrow arrow-prev"></a>
+                      <a href="#target-4" class="arrow arrow-next"></a>
+                   </div>
+                   <div class="slideshow-item item-4">
+                      <div class="progress">4 of 4</div>
+                      <img id= "img4" src="src_img/Pause.png" alt="Pressione a tecla 'space' para pausar o jogo!" width="100%" height="80%"/>
+                      <div class="verde" id="caption4" style="justify-content: center; align-items: center;"></div>
+                      <a href="#target-3" class="arrow arrow-prev"></a>
+                      <a href="#target-1" class="arrow arrow-next"></a>
+                   </div>
+                </section>
+        </div>
+        <button class="main_menu" id="btn_htp_main_menu" style="position:absolute; bottom: 5%;">Menu Principal</button>
+    </aside>
+</div>
+
+    <div  class="game" id="d4"><!--jogo em si-->
+
+        <div class="pause" id="d5">
+            <h1 class="title1" style="font-size:7.5rem; ">M</h1><h1 class="title2" style="font-size:7.5rem;">E</h1><h1 class="title3" style="font-size:7.5rem;">N</h1><h1 class="title4" style="font-size:7.5rem;">U</h1>
+            <br><br>
+            <button class="jogar"id="continue" style="display:inline; width:175px; font-size:2.5rem;">CONTINUAR</button>
+            <br>
+            <button class="como_jogar"id="restart">REINICIAR</button>
+            <br>
+            <button class="sobre"id="game_to_menu">VOLTAR</button>
+
+        </div>
+
+        <div class="gameover" id="d6">
+            <audio src="src_sounds/gameover.mp3" id="game_oversound"></audio>
+            <h1 class="textgameover">FIM DE JOGO</h1>
+            <button class="jogar" style="display:block; width:175px; font-size:2rem; margin-top:10%;" id="jogar_novamente">JOGAR NOVAMENTE</button>
+            <button class="sobre" id="voltar">VOLTAR</button>
+
+        </div>
+
+        <canvas id="tetris" width height></canvas>            
+            <div>
+                <p class = "pontos">
+                    Pontuação: <span id="score"> </span>
+                </p>
+                <p class = "velocidade">
+                    Velocidade: <span id="speed"></span>
+                </p>
+            </div>
+
+            <div class="phone-arrows">
+                <div class="arrow-left">
+                    <a href="#">
+                    <span class="left"></span>
+                    </a>
+                </div>
+                
+                <div class="arrow-top">
+                    <a href="#">
+                    <span class="top"></span>
+                    </a>
+                </div>
+                
+                <div class="arrow-bottom">
+                    <a href="#">
+                    <span class="bottom"></span>
+                    </a>
+                </div>
+                
+                <div class="arrow-right">
+                    <a href="#">
+                    <span class="right"></span>
+                    </a>
+                </div>
+
+                <a id = "engine"><img class = "responsive-pause" src="src_img/Engrenagens.svg"></a>
+
+    </div>
+    <script src="Js_code/piece.js"> </script>
+    <script src="Js_code/skeletons.js"> </script>
+    <script src="Js_code/functions.js"> </script>
+    <script src="Js_code/responsitividade.js"></script>
+    <script src="Js_code/game.js"> </script>
+    <script src="Js_code/background.js"> </script>
+    <script src="Js_code/buttons.js"></script>
+
+<script>//legendas das imagens do tutorial 
+    var captionText1 = document.getElementById("caption1");
+    var img1 = document.getElementById("img1");
+    captionText1.innerHTML = img1.alt;
+
+    var captionText2 = document.getElementById("caption2");
+    var img2 = document.getElementById("img2");
+    captionText2.innerHTML = img2.alt;
+
+    var captionText3 = document.getElementById("caption3");
+    var img3 = document.getElementById("img3");
+    captionText3.innerHTML = img3.alt;
+
+    var captionText4 = document.getElementById("caption4");
+    var img4 = document.getElementById("img4");
+    captionText4.innerHTML = img4.alt;
+</script>
+
+
+
+</body>
+</html>
