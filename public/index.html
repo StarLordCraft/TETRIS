@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" href="src_img/Tetris.ico.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="src_img/Tetris.ico" type="image/x-icon"/>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TETRIS</title>
+
+    <link rel="stylesheet" href="CSS_style/index.css">
+</head>
+
+<body>
+
+    <audio src="src_sounds/buttonclick.mp3" id="click_sound"></audio>
+
+    <main class = "menu" id = "d1"><!--menu principal-->
+        
+        <audio src="src_sounds/menusound.mp3" id="menu_sound" loop></audio>
+        
+        <div class="title">
+            <img src="src_img/Name/T1.svg"/>
+            <img src="src_img/Name/E.svg"/>
+            <img src="src_img/Name/T2.svg"/>
+            <img src="src_img/Name/R.svg"/>
+            <img src="src_img/Name/I.svg"/>
+            <img src="src_img/Name/S.svg"/>
+        </div>
+
+        <section>
+            <div>
+                <a href="./pages/how-to-play.html">
+                    <span
+                    class="name-description">
+                        Tutorial
+                    </span>
+                    <div class="btn-ico">
+                        <i class="fa fa-lightbulb"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <a href="./pages/game.html" class="game">
+                    <span
+                    class="name-description">
+                        Jogar
+                    </span>
+                    <div class="btn-ico">
+                        <i class="fa fa-lightbulb"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <a href="./pages/about.html" class="about">
+                    <span
+                    class="name-description">
+                        Sobre
+                    </span>
+                    <div class="btn-ico">
+                        <i class="fa fa-lightbulb"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <div class="sound-on"></div>
+
+    <script src="./Js_code/functions.js"></script>
+    <script src="./Js_code/background.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #333333;
+}
+
+.title{
+    width: 100%;
+    height: 25%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem
+}
+
+.title img{
+    width: 16%;
+}
+
+.title img:nth-child(4),
+.title img:nth-child(6){
+    width: 14%;
+}
+
+main section{
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 3rem;
+}
+
+.name-description, main section div > a{
+    position: relative;
+    z-index: 1;
+
+    text-decoration: none !important;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+main section div > a{
+    width: 200px;
+
+    position: relative;
+
+    display: inline-block;
+
+    border-radius: 30px;
+
+    background-color: #333;
+
+    padding: 11px 40px 6px 0;
+
+    box-shadow: 0 0 7px rgba(128, 128, 128, 1);
+
+    transition: all 0.3s;
+}
+
+.btn-ico{
+    width: 92px;
+    height: 38px;
+
+    border-radius: 0 30px 30px 0;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    transition: all 0.3s;
+}
+
+.btn-ico i{
+    position:absolute;
+    right: 25px;
+    top: 15px;
+
+    color: #333;
+}
+
+.btn-ico::after{
+    content: "";
+
+    width: 0;
+    height: 0;
+
+    border-top:38px solid #333;
+    border-right: 40px solid transparent;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+main section div > a:hover .name-description{
+    color: #fff !important;
+}
+
+main section div > a:hover .btn-ico{
+    width: 100%;
+
+    border-radius: 30px;
+}
+
+main section div > a:hover .btn-ico i{
+    color: yellow
+}
+
+main section div > a:hover .btn-ico::after{
+    display: none;
+}
+
+main > section > div > a{
+    color: #09A210;
+}
+
+main > section > div > a > .btn-ico{
+    background-color: #09A210;
+}
+
+.game{
+    color: cyan !important;
+}
+
+.game .btn-ico{
+    background-color: cyan !important;
+}
+
+.game:hover .name-description{
+    color: #000 !important;
+}
+
+.about{
+    color: #F1F6AB !important;
+}
+
+.about .btn-ico{
+    background-color: #F1F6AB;
+}
+
+.about:hover .name-description{
+    color: #000 !important;
+}

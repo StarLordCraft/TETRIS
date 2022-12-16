@@ -1,0 +1,314 @@
+@media (max-width: 1204px){
+    html{
+        font-size:45%;
+    }
+}
+@media(max-width: 768px) {
+    html{
+        font-size:35%;
+    }
+    .title1, .title2, .title3, .title4, .title5, .title6{
+        font-size:25rem;
+    }
+    .button_jogar1{
+        margin-top:40%;
+    }
+    .button_jogar2{
+        margin-top:35%;
+    }
+    .button_tutorial1{
+        margin-top:35%;
+    }
+    .button_tutorial2{
+        margin-top:40%;
+    }
+    .button_tutorial3{
+        margin-top:40%;
+    }
+    .button_sobre1{
+        margin-top:35%;
+    }
+    .button_sobre2{
+        margin-top:40%;
+    }
+    .button_sobre3{
+        margin-top:40%;
+    }
+    .pontos{
+        position:absolute;
+        right: 2%;
+        top: 30%;
+        font-size: 5rem;
+    }
+    .velocidade{
+        position:absolute;
+        right: 4%;
+        top: 40%;
+        font-size: 5rem;
+    }
+    .phone-arrows{
+        display:block;
+    }
+    .pause{
+        width: 30%;
+    }
+}
+@media(max-width: 600px)
+{
+    .property{
+        width:70%;
+    }
+    .pause{
+        width:30%;
+        left:20%;
+    }
+    .gameover{
+        width:40%;
+        left:20%;
+    }
+    .left{
+        left: 39%;
+    }
+
+    .right{
+        right: 30%;
+    }
+}
+@media(max-width: 599px)
+{
+    html{
+        font-size:30%;
+    }
+    .background{
+        display:none;
+    }
+    .background1{
+        display:none;
+    }
+}
+@media (max-width: 426px){
+    .img_title1{
+        position:absolute;
+        left: 5%;
+        top: 10%;
+        width: 15%;
+        height: 23%;
+    }
+    .img_title2{
+        position:absolute;
+        left: 20%;
+        top: 9%;
+        width: 15%;
+        height: 25%;
+    }
+    .img_title3{
+        position:absolute;
+        left: 34%;
+        top: 9%;
+        width: 15%;
+        height: 24%;
+    }
+    .img_title4{
+        position:absolute;
+        left: 49%;
+        top: 10%;
+        width: 15%;
+        height: 23%;
+    }
+    .img_title5{
+        position:absolute;
+        left: 64%;
+        top: 10%;
+        width: 15%;
+        height: 23%;
+    }
+    .img_title6{
+        position:absolute;
+        left: 79%;
+        top: 10%;
+        width: 15%;
+        height: 23%;
+    }.button_jogar1{
+        position: absolute;
+        top:40%;
+        left:65%;
+        width:25%;
+        height: 5%;
+        font-style:4rem;
+    }
+    .button_jogar2{
+        position: absolute;
+        top: 38%;
+        left: 70.5%;
+        width: 8%;
+        height: 6%;
+        font-style:4rem;
+    }
+    .button_tutorial1{
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        width: 17%;
+        height: 6%;
+        font-style: 10rem;
+    }
+    .button_tutorial2{
+        position: absolute;
+        top: 40%;
+        left: 44%;
+        width: 8%;
+        height: 5%;
+    }
+    .button_tutorial3{
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        width: 8%;
+        height: 5%;
+    }
+    .button_sobre1{
+        position: absolute;
+        top: 38%;
+        left: 85%;
+        width: 17%;
+        height: 6%;
+        font-style: 10rem;
+    }
+    .button_sobre2{
+        position: absolute;
+        top: 40%;
+        left: 97%;
+        width: 8%;
+        height: 5%;
+    }
+    .button_sobre3{
+        position: absolute;
+        top: 40%;
+        left: 101%;
+        width: 8%;
+        height: 5%;
+    }
+    .jogar_button:hover .button_jogar1{
+        width: 100%;
+        height: 80%;
+        border-radius: 10%;
+        cursor: pointer;
+        display: inline;
+    }
+    .jogar_button:hover .button_jogar2{
+        width: 100%;
+        height: 80%;
+        border-radius: 10%;
+        cursor: pointer;
+        display: inline;
+    }
+    .tutorial_button:hover .button_tutorial1{
+        width: 100%;
+        height: 80%;
+        border-radius: 10%;
+        cursor: pointer;
+        display: inline;
+    }
+    .tutorial_button:hover .button_tutorial2{
+        width: 100%;
+        height: 80%;
+        border-radius: 10%;
+        cursor: pointer;
+        display: inline;
+    }
+    .tutorial_button:hover .button_tutorial3{
+        width: 100%;
+        height: 80%;
+        border-radius: 10%;
+        cursor: pointer;
+        display: inline;
+    }
+    .sobre_button:hover .button_sobre1{
+        width: 100%;
+        height: 80%;
+        border-radius: 10%;
+        cursor: pointer;
+        display: inline;
+    }
+    .sobre_button:hover .button_sobre2{
+        width: 100%;
+        height: 80%;
+        border-radius: 10%;
+        cursor: pointer;
+        display: inline;
+    }
+    .sobre_button:hover .button_sobre3{
+        width: 100%;
+        height: 80%;
+        border-radius: 10%;
+        cursor: pointer;
+        display: inline;
+    }
+    .pause{
+        position:absolute;
+        width: 200px;
+        left: 5%;
+    }
+    .gameover{
+        position:absolute;
+        width: 200px;
+        left: 5%;
+    }
+    .pontos{
+        font-size: 4rem;
+    }
+    .velocidade{
+        font-size: 4rem;
+    }
+    .left{
+        left: 37%;
+    }
+
+    .right{
+        right: 27%;
+    }
+}
+@media (max-width: 376px){
+    .title1, .title2, .title3, .title4, .title5, .title6{
+        font-size:15rem;
+    }
+    .about{width:110%;}
+    
+    .right{right: 24%;}
+    
+    .pontos{
+        font-size: 4rem;
+        position: absolute;
+        right: -15%;
+    }
+    .velocidade{
+        font-size: 4rem;
+        position: absolute;
+        right: -15%;
+    }
+}
+@media (max-width: 321px){
+    .about{
+        width:130%;
+    }
+    .htp{
+        width:130%;
+    }
+    .pontos{
+        font-size: 4rem;
+        position: absolute;
+        right: -30%;
+    }
+    .velocidade{
+        font-size: 4rem;
+        right: -30%;
+    }
+    
+    .right{right: 20%;}
+    
+    .left{left:33%}
+    
+    .responsive-pause{
+        left:0%;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="src_img/Tetris.ico.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="src_img/Tetris.ico" type="image/x-icon"/>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TETRIS</title>
+</head>
+<body>
+    <main  class="game" id="d4"><!--jogo em si-->
+
+        <div class="pause" id="d5">
+            <h1 class="title1" style="font-size:7.5rem; ">M</h1><h1 class="title2" style="font-size:7.5rem;">E</h1><h1 class="title3" style="font-size:7.5rem;">N</h1><h1 class="title4" style="font-size:7.5rem;">U</h1>
+            <br><br>
+            <button class="jogar"id="continue" style="display:inline; width:175px; font-size:2.5rem;">CONTINUAR</button>
+            <br>
+            <button class="como_jogar"id="restart">REINICIAR</button>
+            <br>
+            <button class="sobre"id="game_to_menu">VOLTAR</button>
+
+        </div>
+
+        <div class="gameover" id="d6">
+            <audio src="src_sounds/gameover.mp3" id="game_oversound"></audio>
+            <h1 class="textgameover">FIM DE JOGO</h1>
+            <button class="jogar" style="display:block; width:175px; font-size:2rem; margin-top:10%;" id="jogar_novamente">JOGAR NOVAMENTE</button>
+            <button class="sobre" id="voltar">VOLTAR</button>
+
+        </div>
+
+        <canvas id="tetris" width height></canvas>            
+            <div>
+                <p class = "pontos">
+                    Pontuação: <span id="score"> </span>
+                </p>
+                <p class = "velocidade">
+                    Velocidade: <span id="speed"></span>
+                </p>
+            </div>
+
+            <div class="phone-arrows">
+                <div class="arrow-left">
+                    <a href="#">
+                    <span class="left"></span>
+                    </a>
+                </div>
+                
+                <div class="arrow-top">
+                    <a href="#">
+                    <span class="top"></span>
+                    </a>
+                </div>
+                
+                <div class="arrow-bottom">
+                    <a href="#">
+                    <span class="bottom"></span>
+                    </a>
+                </div>
+                
+                <div class="arrow-right">
+                    <a href="#">
+                    <span class="right"></span>
+                    </a>
+                </div>
+
+                <a id = "engine"><img class = "responsive-pause" src="src_img/Engrenagens.svg"></a>
+
+    </main>
+</body>
+</html>
