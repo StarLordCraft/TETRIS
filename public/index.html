@@ -15,61 +15,70 @@
 <body>
 
     <audio src="src_sounds/buttonclick.mp3" id="click_sound"></audio>
+    
+    <header class="title">
+        <img src="src_img/Name/T1.svg"/>
+        <img src="src_img/Name/E.svg"/>
+        <img src="src_img/Name/T2.svg"/>
+        <img src="src_img/Name/R.svg"/>
+        <img src="src_img/Name/I.svg"/>
+        <img src="src_img/Name/S.svg"/>
+    </header>
 
     <main class = "menu" id = "d1"><!--menu principal-->
         
-        <audio src="src_sounds/menusound.mp3" id="menu_sound" loop></audio>
-        
-        <div class="title">
-            <img src="src_img/Name/T1.svg"/>
-            <img src="src_img/Name/E.svg"/>
-            <img src="src_img/Name/T2.svg"/>
-            <img src="src_img/Name/R.svg"/>
-            <img src="src_img/Name/I.svg"/>
-            <img src="src_img/Name/S.svg"/>
-        </div>
-
+        <audio src="src_sounds/menusound.mp3" id="menu_sound" loop autoplay muted></audio>
         <section>
-            <div>
-                <a href="./pages/how-to-play.html">
-                    <span
-                    class="name-description">
-                        Tutorial
-                    </span>
-                    <div class="btn-ico">
-                        <i class="fa fa-lightbulb"></i>
-                    </div>
-                </a>
+            <div class="background">
+                <canvas width height="600" id="background_canvas"></canvas>
             </div>
 
-            <div>
-                <a href="./pages/game.html" class="game">
-                    <span
-                    class="name-description">
-                        Jogar
-                    </span>
-                    <div class="btn-ico">
-                        <i class="fa fa-lightbulb"></i>
-                    </div>
-                </a>
-            </div>
+            <section>
+                <div>
+                    <a href="./pages/how-to-play.html">
+                        <span
+                        class="name-description">
+                            Tutorial
+                        </span>
+                        <div class="btn-ico">
+                            <i class="fa fa-lightbulb"></i>
+                        </div>
+                    </a>
+                </div>
 
-            <div>
-                <a href="./pages/about.html" class="about">
-                    <span
-                    class="name-description">
-                        Sobre
-                    </span>
-                    <div class="btn-ico">
-                        <i class="fa fa-lightbulb"></i>
-                    </div>
-                </a>
+                <div>
+                    <a href="./pages/game.html" class="game">
+                        <span
+                        class="name-description">
+                            Jogar
+                        </span>
+                        <div class="btn-ico">
+                            <i class="fa fa-lightbulb"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="./pages/about.html" class="about">
+                        <span
+                        class="name-description">
+                            Sobre
+                        </span>
+                        <div class="btn-ico">
+                            <i class="fa fa-lightbulb"></i>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <div class="background">
+                <canvas width height="600" id="background1_canvas"></canvas>
             </div>
         </section>
-    </main>
-    <div class="sound-on"></div>
 
-    <script src="./Js_code/functions.js"></script>
-    <script src="./Js_code/background.js"></script>
+        <div class="sound-on" id="sound"></div>
+    </main>
+    <script src="Js_code/indexfunctions.js"></script>
+    <script src="Js_code/index.js" type="module"></script>
 </body>
 </html>
